@@ -1,0 +1,15 @@
+{
+  "name": "VagrantDockerBoilerplate",
+  "version": "1.0.0",
+  "description": "A boilerplate for setting up Vagrant and Docker for a development environment.",
+  "main": "app.ja",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "Docker",
+    "Vagrant"
+  ],
+  "author": "Christian Wallervand",
+  "license": "ISC"
+}
