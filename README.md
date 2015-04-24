@@ -59,6 +59,13 @@ Using the ```-v ``` options is what makes the ```myApplication/app``` folder on 
 This is basically what is happening: The ```app```folder in the ```myAppplication``` folder
 on the VM is synced to a (new) folder in the Docker container also called ```myApplication```. So every change that is made in the ```app```folder on the host (which is synced to the VM) can be reflected to the Docker container at run time.
 
+##Running the boilerplate / application##
+All you need to do to get this setup working is running ```vagrant up```.
+This will install install every thing the VM needs (i.e. Docker),
+build the Docker image and run the application on a Docker container.
+The application will be accessible at [localhost](http://localhost:8080).
+You should now be able to do changes to the ```server.js```file and those changes
+will be reflected in the running app. 
 
 ##Known issues##
 There has been problems with running `vagrant up` or `vagrant reload` after running `vagrant halt`. The issue is believed to related to VirtualBox and/or/with synced folders. If you encounter this issue you can try to install the [vagrant-vbguest](https://github.com/dotless-de/vagrant-vbguest) plugin.
