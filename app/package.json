@@ -2,14 +2,23 @@
   "name": "VagrantDockerBoilerplate",
   "version": "1.0.0",
   "description": "A boilerplate for setting up Vagrant and Docker for a development environment.",
-  "main": "app.ja",
-  "scripts": {
-    "test": "test"
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:cwallervand/VagrantDockerBoilerplate.git"
   },
   "keywords": [
     "Docker",
     "Vagrant"
   ],
   "author": "Christian Wallervand",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.12.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-express": "^0.3.5",
+    "run-sequence": "^1.1.0"
+  }
 }

@@ -1,5 +1,5 @@
 # Pull base image.
-FROM dockerfile/nodejs
+FROM node
 
 # Add /app from host (path is relative to Dockerfile) to /myApplication in container
 ADD /app /myApplication

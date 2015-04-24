@@ -16,6 +16,8 @@ echo -e '#############################
 # Building Docker container #
 #############################\n.'
 cd /myApplication
+#Adding group docker
+sudo groupadd docker
 #Adding root user to docker group
 sudo gpasswd -a $USER docker
 #Restarting docker service

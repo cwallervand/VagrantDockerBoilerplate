@@ -1,5 +1,7 @@
 VagrantDockerBoilerplate
 ========================
+STILL UNDER CONSTRUCTION.....
+
 This is a basic boilerplate for setting up a VM using Vagrant and running Docker containers in that VM. This setup will allow you to make changes to source code on your host OS and reflect those changes to a Docker container running on the VM's OS at run time.
 
 I spent a lot of time getting the Vagrant-Docker setup that I wanted and figured that others probably encountered the same frustration and pain that I encountered, so I am hoping that this boilerplate will help those poor soles on their way.
@@ -56,3 +58,11 @@ Using the ```-v ``` options is what makes the ```myApplication/app``` folder on 
 (ADD in the Docker file is only a copy job). It will also overwrite the existing ```myAppplication``` folder in the Docker image.
 This is basically what is happening: The ```app```folder in the ```myAppplication``` folder
 on the VM is synced to a (new) folder in the Docker container also called ```myApplication```. So every change that is made in the ```app```folder on the host (which is synced to the VM) can be reflected to the Docker container at run time.
+
+
+##Known issues##
+There has been problems with running `vagrant up` or `vagrant reload` after running `vagrant halt`. The issue is believed to related to VirtualBox and/or/with synced folders. If you encounter this issue you can try to install the [vagrant-vbguest](https://github.com/dotless-de/vagrant-vbguest) plugin.
+
+```
+vagrant plugin install vagrant-vbguest
+```

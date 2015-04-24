@@ -8,6 +8,11 @@ Vagrant.configure(2) do |config|
   #Set the Vagrant box, need to support mount_options for synced_folder
   config.vm.box = "chef/centos-7.0"
 
+  # Defaults to true, but due to a recent issue the vbugest installation may fail.....
+  # Remove when fixed
+  #config.vbguest.auto_update = false;
+  #config.vbguest.auto_reboot = false;
+
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 8080 on the guest machine.
@@ -33,7 +38,7 @@ Vagrant.configure(2) do |config|
     cos.vm.provision "docker", run: "always" do |d|
       d.run "application_image",
         args: "-it -p 8080:8080 -v /myApplication/app:/myApplication",
-        cmd: "/bin/bash -c 'npm install;gulp;'"
+        cmd: "/bin/bash -c 'npm install;gulp dev;'"
     end
   end
 end
