@@ -51,7 +51,7 @@ Each time the VM starts it will run a Docker container based on the Docker image
 cos.vm.provision "docker", run: "always" do |d|
   d.run "application_image",
     args: "-it -p 8080:8080 -v /myApplication/app:/myApplication",
-    cmd: "/bin/bash -c 'npm install;'"
+    cmd: "/bin/bash -c 'npm install;gulp dev;'"
 end
 ```
 Using the ```-v ``` options is what makes the ```myApplication/app``` folder on the VM synced to the folder in the Docker container
